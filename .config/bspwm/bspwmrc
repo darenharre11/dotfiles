@@ -1,0 +1,47 @@
+#! /bin/sh
+
+# bspc monitor -d Home Web Work Files Mails Misc
+# bspc monitor -d 1 2 3
+# bspc monitor HDMI-0 -d "   Comms   "
+# bspc monitor DP-4 -d "   Arch   "
+# bspc monitor DP-0 -d "   Firefox   "
+bspc monitor HDMI-0 -d 1
+bspc monitor DP-4 -d 2
+bspc monitor DP-0 -d 3
+
+bspc config border_width         3
+bspc config borderless_monocle   false
+
+bspc config window_gap            10
+bspc config split_ratio           0.50
+# bspc config gapless_monocle       true # this puts a space between polybar and the windows
+bspc config focus_follows_pointer true
+
+bspc config top_padding 32
+
+bspc config focused_border_color "#2188ff"
+# bspc config focused_border_color "#98971a"
+# bspc config normal_border_color "#353b45"
+
+############################
+# autostart up applications
+############################
+
+# compositor ---- picom
+picom --experimental-backends --backend glx &
+
+# wallpaper ---- feh (try nitrogen?)
+# feh --bg-fill ~/.wallpaper/4.png &
+~/.fehbg &
+
+# what is this ? :)
+xrdb merge ~/.Xresources &
+
+# polybar
+~/.config/polybar/launch.sh &
+
+# tint2
+# tint2 &
+
+# hotkeys ---- sxhkd
+sxhkd

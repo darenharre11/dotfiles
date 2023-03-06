@@ -1,0 +1,100 @@
+#  ------ Launch Programs  -------- #
+
+# terminal
+super + Return
+      kitty
+
+# drun to launch applications
+super + c
+        rofi -show drun
+
+#  ------ Reload Configs  -------- #
+
+# sxhkdrc
+super + shift + r
+	pkill -USR1 -x sxhkd
+
+# bswpwmrc
+super + shift + e
+        bspc wm -r
+
+#  ------------ bspwm hotkeys ------------ #
+
+# quit bspwm
+super + alt + q
+	bspc quit
+
+# restart bspwm
+super + alt + r
+    bspc wm -r
+
+# close and kill applications
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + shift + Tab
+	bspc desktop -l next
+
+# change the focused node to the given direction
+# + shift to move the focsed node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the last node/desktop
+super + Tab
+	bspc {node,desktop} -f last
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# move/resize
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+
+# -------------- take screenshots ------------- #
+
+#fullscreen screenshot save
+super + Print
+     maim "/home/$USER/Pictures/$(date).png"
+
+#cropped save
+# super + shift + x
+#       maim --select "/home/$USER/Pictures/$(date).png"
+
+#  clipboard fullscreen
+super + x
+     maim | xclip -selection clipboard -t image/png
+
+# clipboard cropped
+super + shift + x
+    maim --select | xclip -selection clipboard -t image/png
+
+
+# --------------- Floating Stuff ------------------ #
+# Toggle floating
+super + d
+    bspc node focused -t \~floating
+
+# move a floating window with arrow keys (can also just click and drag)
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

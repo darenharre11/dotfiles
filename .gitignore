@@ -2,3 +2,4 @@
 pack/
 .git
 /readme.md
+.vim/ignore

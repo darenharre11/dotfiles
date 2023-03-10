@@ -87,6 +87,10 @@ export PATH="$HOME/.local/bin:$PATH"
 # add vscode to path for wsl
 export PATH=$PATH:"/mnt/c/Users/daren/AppData/Local/Programs/Microsoft VS Code/bin/"
 
+# add miniconda3 for lean
+# docs: https://github.com/QuantConnect/Lean/tree/master/Algorithm.Python
+export PATH="$HOME/miniconda3/bin:$PATH"
+
 ############################
 ####     Do not touch
 ############################

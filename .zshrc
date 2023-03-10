@@ -64,7 +64,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # git add, commit and push all in one
 # example: lazygit "commit message"
-function lazygit() {
+function quickgit() {
     git add .
     git commit -a --allow-empty-message -m "$*"
     git push

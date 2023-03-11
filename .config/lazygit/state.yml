@@ -1,5 +1,6 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/pburneux/dotfiles/.config/nvim
 - /home/pburneux/dotfiles
 startuppopupversion: 5
 customcommandshistory: []

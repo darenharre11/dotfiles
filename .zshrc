@@ -75,7 +75,7 @@ function quickgit() {
 ############################
 
 # sensible detail for PATH
-export PATH="/usr/local/bin:/usr/bin:/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:$PATH"
 
 # FOREMAN (for ROBLOX)
 export PATH="$HOME/.foreman/bin/:$PATH"
@@ -85,7 +85,7 @@ export PATH="$HOME/.cargo/bin/:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # add vscode to path for wsl
-export PATH=$PATH:"/mnt/c/Users/daren/AppData/Local/Programs/Microsoft VS Code/bin/"
+export PATH="/mnt/c/Users/daren/AppData/Local/Programs/Microsoft VS Code/bin/:$PATH"
 
 # add miniconda3 for lean
 # docs: https://github.com/QuantConnect/Lean/tree/master/Algorithm.Python
@@ -98,3 +98,7 @@ export PATH="$HOME/miniconda3/bin:$PATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /usr/share/nvm/init-nvm.sh
+
+# launch tmux on start
+if [ "$TMUX" = "" ]; then tmux; fi
+

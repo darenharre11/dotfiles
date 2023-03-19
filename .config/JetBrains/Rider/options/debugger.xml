@@ -1,0 +1,13 @@
+<application>
+    <component name="XDebuggerSettings">
+        <debuggers>
+            <debugger id="dotnet_debugger">
+                <configuration>
+                    <option name="sshCredentials">
+                        <option value="&lt;credentials HOST=&quot;localhost&quot; PORT=&quot;2222&quot; USERNAME=&quot;root&quot; PRIVATE_KEY_FILE=&quot;/home/daren/.lean/ssh/key&quot; USE_KEY_PAIR=&quot;true&quot; USE_AUTH_AGENT=&quot;false&quot; /&gt;"/>
+                    </option>
+                </configuration>
+            </debugger>
+        </debuggers>
+    </component>
+</application>

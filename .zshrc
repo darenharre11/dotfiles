@@ -46,7 +46,8 @@ antigen apply
 set -o vi
 
 chpwd() {
-  echo " " && pwd && echo "--------------------" && exa --long --sort=Ext --all --header --git --icons && echo ""
+  # echo " " && pwd && echo "--------------------" && exa --long --sort=Ext --all --header --git --icons && echo ""
+  echo " " && pwd && echo "--------------------" && exa --sort=Ext --header --git --icons && echo ""
 }
 
 # quick reload

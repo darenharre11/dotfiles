@@ -101,5 +101,11 @@ export PATH="$HOME/miniconda3/bin:$PATH"
 source /usr/share/nvm/init-nvm.sh
 
 # launch tmux on start
-if [ "$TMUX" = "" ]; then tmux; fi
+# if [ "$TMUX" = "" ]; then tmux; fi
+
+# launch tmux on start and switch to default session "meow", if it doesnt exist
+# then create it.
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+exec tmux new-session -A -s meow
+fi
 
